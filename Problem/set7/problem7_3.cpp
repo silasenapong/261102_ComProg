@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 int main()
 {
@@ -12,7 +13,20 @@ int main()
         {
             y *= 2;
         }
+
+        z = (x + y) / 2;
     }
+    else
+    {
+        z = sqrt(pow(x, 2) + pow(y, 2));
+
+        if (z > 50)
+        {
+            z = 50;
+        }
+    }
+
+    std::cout << z;
 
     return 0;
 }
