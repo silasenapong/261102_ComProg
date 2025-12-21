@@ -42,7 +42,7 @@ string func3(string x)
 int main()
 {
 
-    string s,sl,sr;
+    string s, sl, sr;
 
     cout << "Input text: ";
     cin >> s;
@@ -59,8 +59,6 @@ int main()
     {
         cout << "Palindrome: NO" << endl;
     }
-
-    
 
     return 0;
 }
