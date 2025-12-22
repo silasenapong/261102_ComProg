@@ -42,22 +42,25 @@ string func3(string x)
 int main()
 {
 
-    string s, sl, sr;
+    string input_str, reverse_str, lower_str, lower_reverse_str;
 
     cout << "Input text: ";
-    cin >> s;
+    cin >> input_str;
 
-    sl = func3(s);
-    sr = func1(sl);
-    cout << "Reversed text: " << sr << endl;
+    reverse_str = func1(input_str);
+    lower_str = func2(input_str);
 
-    if (sr == sl)
+    lower_reverse_str = func2(reverse_str);
+
+    cout << "Reversed text: " << reverse_str << endl;
+
+    if (lower_reverse_str == lower_str)
     {
-        cout << "Palindrome: YES" << endl;
+        cout << "Palindrome: Yes" << endl;
     }
     else
     {
-        cout << "Palindrome: NO" << endl;
+        cout << "Palindrome: No" << endl;
     }
 
     return 0;
