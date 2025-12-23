@@ -5,15 +5,16 @@ using namespace std;
 int main()
 {
 
-    int i = 0, P[9999], k, result;
+    int i = 0, P[5000], k, result;
 
-    while (i < 9999)
+    while (i < 5000)
     {
-        P[i] = i + 1;
+        P[i] = 2 * i + 1;
+        // cout << i << "\t" << P[i] << endl;
         i++;
-        cout << P[i] << endl;
     }
 
+    cout << "Please input k: ";
     cin >> k;
 
     if (k > 0)
@@ -33,10 +34,9 @@ int main()
             }
 
             i++;
-            // cout << i << endl;
         }
 
-        cout << result;
+        cout << "Result = " << result;
     }
     else
     {
