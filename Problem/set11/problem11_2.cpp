@@ -4,36 +4,37 @@ using namespace std;
 
 long long int fibonacci_recursive(long long int x);
 long long int fibonacci_loop(long long x);
+void call_recursive(int num);
+void call_loop(int num);
 
-/*
 int main()
 {
+    int num = 40;
 
-    // recursive
-    clock_t start = clock();
-    cout << "Result: " << fibonacci_recursive(40) << "\n";
-    clock_t end = clock();
-    double elapsed = double(end - start) / CLOCKS_PER_SEC;
-    cout << "Elapsed Time: " << elapsed << " seconds.";
+    call_loop(num);
+    call_recursive(num);
 
     return 0;
-
-    // 102334155
-    // 0.720669
 }
-*/
 
-int main()
+void call_recursive(int num)
 {
-
-    // loop
     clock_t start = clock();
-    cout << "Result: " << fibonacci_loop(40) << "\n";
+    cout << "Resursive\n";
+    cout << "Result: " << fibonacci_recursive(num) << "\n";
     clock_t end = clock();
     double elapsed = double(end - start) / CLOCKS_PER_SEC;
-    cout << "Elapsed Time: " << elapsed << " seconds.";
+    cout << "Elapsed Time: " << elapsed << " seconds.\n\n";
+}
 
-    return 0;
+void call_loop(int num)
+{
+    clock_t start = clock();
+    cout << "Loop\n";
+    cout << "Result: " << fibonacci_loop(num) << "\n";
+    clock_t end = clock();
+    double elapsed = double(end - start) / CLOCKS_PER_SEC;
+    cout << "Elapsed Time: " << elapsed << " seconds.\n\n";
 }
 
 long long int fibonacci_recursive(long long int x)
@@ -79,15 +80,3 @@ long long int fibonacci_loop(long long x)
         return curr;
     }
 }
-
-/*
-    x = 5
-    prev1 = 1, prev2 = 0
-
-    for (int i = 2; i <= x; i++) {
-        curr = prev1 + prev2; curr = 1
-        prev2 = prev1; prev2 = 1
-        prev1 = curr; prev1 = 1
-    }
-    return curr;
-*/
