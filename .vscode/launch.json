@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "y:/file/CMU/year_2/test_repo",
-      "program": "y:/file/CMU/year_2/test_repo/build/Debug/outDebug",
+      "cwd": "y:/file/CMU/year_2/test_repo/Problem/set12",
+      "program": "y:/file/CMU/year_2/test_repo/Problem/set12/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
