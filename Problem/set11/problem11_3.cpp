@@ -1,25 +1,27 @@
 #include <iostream>
 #include <cmath>
 
-int cal1(int n)
-{
-
-    int sum;
-
-    if (n == 1)
-    {
-    }
-    else
-    {
-        // n-1
-        return cal1(pow(2, n)) + cal1(pow(2, n - 1));
-    }
-}
+int sum_of_pow(int n);
 
 int main()
 {
 
-    cal1(5);
+    std::cout << sum_of_pow(4) << std::endl;
+    std::cout << sum_of_pow(5) << std::endl;
+    std::cout << sum_of_pow(6) << std::endl;
 
     return 0;
+}
+
+int sum_of_pow(int n)
+{
+
+    if (n == 1)
+    {
+        return 2;
+    }
+    else
+    {
+        return pow(2, n) + sum_of_pow(n - 1);
+    }
 }
