@@ -7,15 +7,16 @@ template <typename T>
 void show(T d[], int N);
 
 template <typename T>
+bool moveMax2End(T d[], int N);
+
+template <typename T>
 void bubbleSort(T d[], int N);
 
 int main()
 {
 
-    int arr[] = {12, 56, 24, 86, 770, 23, 13, 87, 9, 354, 67};
+    int arr[1000] = {};
     int size = sizeof(arr) / sizeof(arr[0]);
-
-    // std::cout << size;
 
     std::cout << "Original : ";
     show(arr, size);
