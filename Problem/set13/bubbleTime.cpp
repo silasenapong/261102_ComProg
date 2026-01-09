@@ -14,16 +14,16 @@ int main()
     int array_1[size];
 
     fill_array(array_1, size);
-    show(array_1, size);
     std::cout << std::endl;
 
     clock_t start = clock();
     bubbleSort(array_1, size);
     clock_t end = clock();
-    double elapsed = double(end - start) / CLOCKS_PER_SEC;
-    std::cout << "Elapsed Time: " << elapsed << " seconds." << std::endl;
 
     show(array_1, size);
+
+    double elapsed = double(end - start) / CLOCKS_PER_SEC;
+    std::cout << "Elapsed Time: " << elapsed << " seconds." << std::endl;
 
     return 0;
 }
@@ -62,11 +62,14 @@ void swap(int arr[], int x, int y)
 
 void bubbleSort(int arr[], int size)
 {
-    for (int i = 0; i < size - 1; i++)
+    for (int i = 0; i < size; i++)
     {
-        if (arr[i] > arr[i + 1])
+        for (int j = 0; j < size; j++)
         {
-            swap(arr, i, i + 1);
+            if (arr[i] > arr[i + 1])
+            {
+                swap(arr, i, i + 1);
+            }
         }
     }
 }
