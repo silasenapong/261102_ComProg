@@ -3,6 +3,7 @@
     rope length = 100 cm
     fire time 10s (if start at 0)
     loop input until = 100 or (< 0 or > 100)
+    1s rope burn 10cm
 */
 
 #include <iostream>
