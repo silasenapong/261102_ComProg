@@ -40,6 +40,10 @@ void show(int matrix[size][size])
     }
 }
 
-void findDet(int matrix[size][size])
+int findDet(int matrix[size][size])
 {
+    if (size == 1)
+    {
+        return matrix[0][0];
+    }
 }
