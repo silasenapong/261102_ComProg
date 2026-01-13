@@ -1,14 +1,22 @@
 #include <iostream>
 
+const int size = 3;
+
+void input_mat(int matrix[size][size]);
+void show(int matrix[size][size]);
+void findDet(int matrix[size][size]);
+
 int main()
 {
-    int size;
-    std::cout << "Please input matrix size: ";
-    std::cin >> size;
-
+    // std::cout << "Please input matrix size: ";
+    // std::cin >> size;
     double matrix[size][size];
 
-    // input matrix
+    return 0;
+}
+
+void input_mat(int matrix[size][size])
+{
     for (int i = 0; i < size; i++)
     {
         std::cout << "Input elements of row " << i + 1 << ": ";
@@ -18,8 +26,10 @@ int main()
             std::cin >> matrix[i][j];
         }
     }
+}
 
-    // show matrix
+void show(int matrix[size][size])
+{
     for (int i = 0; i < size; i++)
     {
         for (int j = 0; j < size; j++)
@@ -28,8 +38,12 @@ int main()
         }
         std::cout << std::endl;
     }
+}
 
-    // cal det
-
-    return 0;
+int findDet(int matrix[size][size])
+{
+    if (size == 1)
+    {
+        return matrix[0][0];
+    }
 }

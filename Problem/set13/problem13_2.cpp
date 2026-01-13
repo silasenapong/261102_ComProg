@@ -8,26 +8,22 @@ template <typename T>
 void show(T d[], int N);
 
 template <typename T>
-void insertionSort(T d[], int N);
+void selectionSort(T d[], int N);
 
 void fill_arr(int arr[], int size);
 
 int main()
 {
     srand(time(0));
-
-    int size = rand() % 1000 + 1;
+    int size = 300;
     int arr[size];
 
     fill_arr(arr, size);
-
-    std::cout << "Original array : \n";
+    std::cout << "Original Array : \n";
     show(arr, size);
 
-    std::cout << std::endl;
-
-    insertionSort(arr, size);
-    std::cout << "Sorted array : \n";
+    selectionSort(arr, size);
+    std::cout << "\nSorted Array : \n";
     show(arr, size);
 
     return 0;
@@ -46,7 +42,8 @@ void show(T d[], int N)
 {
     for (int i = 0; i < N; i++)
     {
-        if (i > 0 && i % 10 == 0)
+
+        if (i % 10 == 0 && i != 0)
         {
             std::cout << d[i] << std::endl;
         }
@@ -58,20 +55,17 @@ void show(T d[], int N)
 }
 
 template <typename T>
-void insertionSort(T d[], int N)
+void selectionSort(T d[], int N)
 {
-    for (int i = 1; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
-        T key = d[i];
-        int j = i - 1;
-
-        while (j >= 0 && d[j] < key)
+        for (int j = i + 1; j < N; j++)
         {
-            d[j + 1] = d[j];
-            j--;
+            if (d[i] > d[j])
+            {
+                swap(d, i, j);
+            }
         }
-
-        d[j + 1] = key;
     }
 }
 
@@ -79,6 +73,6 @@ void fill_arr(int arr[], int size)
 {
     for (int i = 0; i < size; i++)
     {
-        arr[i] = rand() % 100000 + 1;
+        arr[i] = rand() % 1000 + 1;
     }
 }
