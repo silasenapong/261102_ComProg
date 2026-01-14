@@ -40,6 +40,17 @@ void insertionSort(T d[], int N)
 {
     for (int i = 1; i < N; i++)
     {
+        T key = d[i];
         int j = i - 1;
+
+        while (j >= 0 && d[j] < key)
+        {
+            d[i] = d[j];
+            j--;
+        }
+
+        d[j + 1] = key;
+        cout << "Pass " << i << ":";
+        show(d, N);
     }
 }
