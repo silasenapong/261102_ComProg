@@ -2,9 +2,9 @@
 
 const int size = 3;
 
-void input_mat(int matrix[size][size]);
-void show(int matrix[size][size]);
-void findDet(int matrix[size][size]);
+void input_mat(double matrix[size][size]);
+void show(double matrix[size][size]);
+double findDet(double matrix[size][size]);
 
 int main()
 {
@@ -12,10 +12,15 @@ int main()
     // std::cin >> size;
     double matrix[size][size];
 
+    input_mat(matrix);
+
+    std::cout << "Original matrix : " << std::endl;
+    show(matrix);
+
     return 0;
 }
 
-void input_mat(int matrix[size][size])
+void input_mat(double matrix[size][size])
 {
     for (int i = 0; i < size; i++)
     {
@@ -28,7 +33,7 @@ void input_mat(int matrix[size][size])
     }
 }
 
-void show(int matrix[size][size])
+void show(double matrix[size][size])
 {
     for (int i = 0; i < size; i++)
     {
@@ -40,10 +45,12 @@ void show(int matrix[size][size])
     }
 }
 
-int findDet(int matrix[size][size])
+double findDet(double matrix[size][size])
 {
     if (size == 1)
     {
         return matrix[0][0];
     }
+
+    return 0;
 }

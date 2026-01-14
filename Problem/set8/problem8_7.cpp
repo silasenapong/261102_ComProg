@@ -10,6 +10,7 @@
 
 void input(int position[]);
 void show(int position[], int l);
+void cal(int position[]);
 
 int main()
 {
@@ -17,31 +18,42 @@ int main()
     int length = 100;
     int position[length] = {0};
 
+    input(position);
+    show(position, length);
+
     return 0;
 }
 
 void input(int position[])
 {
-    int current_position, last_position = 0, count = 0;
+    int current_position = 0, last_position = 0, count = 0;
 
     while (true)
     {
         std::cout << "Input the burner location: ";
         std::cin >> current_position;
 
-        if (current_position < 0 || current_position >= 100)
+        if (current_position < 0 || current_position > 100)
         {
             break;
         }
 
         if (current_position <= last_position)
         {
-            std::cout << "Next location must be greater than " << ".\n";
+            std::cout << "Next location must be greater than " << last_position << ".\n";
             continue;
         }
 
+        position[count] = current_position;
         last_position = current_position;
         count++;
+
+        if (current_position == 100)
+        {
+            break;
+        }
+
+        // std::cout << "Count : " << count << std::endl;
     }
 }
 
@@ -51,7 +63,11 @@ void show(int position[], int length)
     {
         if (position[i] > 0)
         {
-            std::cout << "Cuttent position is : " << position[i] << std::endl;
+            std::cout << "Burn position is : " << position[i] << std::endl;
         }
     }
+}
+
+void cal(int position[])
+{
 }
