@@ -45,7 +45,7 @@ void insertionSort(T d[], int N)
 
         while (j >= 0 && d[j] < key)
         {
-            d[i] = d[j];
+            d[j + 1] = d[j];
             j--;
         }
 
