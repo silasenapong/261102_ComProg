@@ -4,7 +4,7 @@ const int size = 3;
 
 void input_mat(int matrix[size][size]);
 void show(int matrix[size][size]);
-void findDet(int matrix[size][size]);
+int findDet(int matrix[size][size]);
 
 int main()
 {
