@@ -7,26 +7,27 @@
 */
 
 #include <iostream>
+#include <algorithm>
 
-void input(int position[]);
-void show(int position[], int l);
-void cal(int position[]);
+int input(int position[]);
+void show(int position[], int count);
+void cal(int position[], int count);
 
 int main()
 {
 
-    int length = 100;
-    int position[length] = {0};
+    int position[100] = {0};
 
-    input(position);
-    show(position, length);
+    int count = input(position);
+
+    cal(position, count);
 
     return 0;
 }
 
-void input(int position[])
+int input(int position[])
 {
-    int current_position = 0, last_position = 0, count = 0;
+    int current_position = 0, last_position = -1, count = 0;
 
     while (true)
     {
@@ -55,11 +56,12 @@ void input(int position[])
 
         // std::cout << "Count : " << count << std::endl;
     }
+    return count;
 }
 
-void show(int position[], int length)
+void show(int position[], int count)
 {
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < count; i++)
     {
         if (position[i] > 0)
         {
@@ -68,6 +70,22 @@ void show(int position[], int length)
     }
 }
 
-void cal(int position[])
+void cal(int position[], int count)
 {
+    if (count == 0)
+        return;
+
+    double max_dist = (double)position[0];
+
+    max_dist = std::max(max_dist, (double)(100 - position[count - 1]));
+
+    for (int i = 0; i < count - 1; i++)
+    {
+        double gap = (position[i + 1] - position[i]) / 2.0;
+        max_dist = std::max(max_dist, gap);
+    }
+
+    double time = max_dist / 10.0;
+
+    std::cout << "Burning completes in " << time << " sec." << std::endl;
 }
