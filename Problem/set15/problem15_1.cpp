@@ -37,12 +37,21 @@ int main()
 
 int sumNonZero(int *d, int **s, int **e)
 {
-    for (int i = 0; i < *d; i++)
+    int total = 0;
+
+    while (*d == 0)
     {
-        std::cout << *(d + 1) << " ";
+        d++;
     }
 
-    std::cout << std::endl;
+    *s = d;
 
-    return 0;
+    while (*d != 0)
+    {
+        total += *d;
+        *e = d;
+        d++;
+    }
+
+    return total;
 }
