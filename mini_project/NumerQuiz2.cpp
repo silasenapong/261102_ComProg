@@ -7,7 +7,7 @@ double FuncX(double x)
     return pow(x, 3) - x - 1;
 }
 
-double FindMid(double (&range)[])
+double FindMid(double(range)[])
 {
     return (range[0] + range[1]) / 2;
 }
