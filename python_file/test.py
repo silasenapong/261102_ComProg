@@ -1,2 +1,1 @@
-while(True):
-    print("A")
+print([4] * 5)

@@ -17,7 +17,7 @@ int main()
     int *p1 = &data[0];
     int *p2 = &data[9];
 
-    quicksort(_____);
+    quicksort(p1, p2);
 
     for (int *i = p1; i <= p2; i++)
     {
@@ -30,7 +30,7 @@ int main()
 template <typename T>
 void quicksort(T *lo, T *hi)
 {
-    _____ = partition(lo, hi);
+    T p = partition(lo, hi);
     if (p - 1 > lo)
         quicksort(lo, p - 1);
     if (hi > p + 1)
@@ -40,9 +40,9 @@ void quicksort(T *lo, T *hi)
 template <typename T>
 T *partition(T *lo, T *hi)
 {
-    T pivot = _____;
-    _____ = lo;
-    for (_____; j < hi; j++)
+    T pivot = hi;
+    int i = lo;
+    for (int j = lo; j < hi; j++)
     {
         if (_____ <= pivot)
         {
