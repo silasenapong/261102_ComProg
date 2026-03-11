@@ -30,24 +30,25 @@ int main()
 template <typename T>
 void quicksort(T *lo, T *hi)
 {
-    T p = partition(lo, hi);
-    if (p - 1 > lo)
+    if (lo < hi)
+    {
+        T *p = partition(lo, hi);
         quicksort(lo, p - 1);
-    if (hi > p + 1)
         quicksort(p + 1, hi);
+    }
 }
 
 template <typename T>
 T *partition(T *lo, T *hi)
 {
-    T pivot = hi;
-    int i = lo;
-    for (int j = lo; j < hi; j++)
+    T *pivot = hi;
+    T *i = lo;
+    for (T *j = lo; j < hi; j++)
     {
-        if (_____ <= pivot)
+        if (*j <= *pivot)
         {
             swap(i, j);
-            _____;
+            i++;
         }
     }
     swap(i, hi);
