@@ -15,8 +15,43 @@ public:
 bool People::flirt(People &target)
 {
 
-    std::cout << gender;
+    bool condition[5] = {false};
 
+    if (target.gender == 'F')
+    {
+        condition[0] = true;
+    }
+
+    if (target.age < age)
+    {
+        condition[1] = true;
+    }
+
+    if (target.money < money)
+    {
+        condition[2] = true;
+    }
+
+    if (target.height < height)
+    {
+        condition[3] = true;
+    }
+
+    if (target.weight < weight)
+    {
+        condition[4] = true;
+    }
+
+    for (int i = 0; i < 5; i++)
+    {
+        if (condition[i] == false)
+        {
+            return false;
+        }
+    }
+
+    in_relation_with = target.in_relation_with;
+    target.in_relation_with = in_relation_with;
     return true;
 }
 
@@ -36,9 +71,14 @@ int main()
     p2.height = 161.7;
     p2.weight = 53.7;
 
-    p1.flirt(p2);
-
-    std::cout << p1.in_relation_with << "\n";
+    if (p1.flirt(p2))
+    {
+        std::cout << "Dream come true\n";
+    }
+    else
+    {
+        std::cout << "Damm\n";
+    }
 
     return 0;
 }
