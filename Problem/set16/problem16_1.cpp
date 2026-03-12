@@ -32,11 +32,26 @@ int main()
 
 void myMatrix(int ***p, int N)
 {
+    *p = new int *[N];
     for (int i = 0; i < N; i++)
     {
+        (*p)[i] = new int[N];
+    }
+
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < N; j++)
+        {
+            (*p)[i][j] = i + j;
+        }
     }
 }
 
 void freeSpace(int **p, int N)
 {
+    for (int i = 0; i < N; i++)
+    {
+        delete[] p[i];
+    }
+    delete[] p;
 }
